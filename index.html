@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMAS Exam Topics & Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ac:#7c3aed;--acl:#f5f3ff;--acd:#5b21b6;--bg:#f8f9fc;--card:#fff;--border:rgba(0,0,0,0.09);--text:#1a1a2e;--muted:#6b7280}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);padding:1.5rem;min-height:100vh}
+.wrap{max-width:1050px;margin:0 auto}
+.brand{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.25rem}
+.tab{display:flex;align-items:center;gap:7px;padding:9px 18px;border-radius:10px;border:1.5px solid var(--border);background:var(--card);cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);transition:all .15s;font-family:inherit}
+.tab:hover,.tab.on{border-color:var(--ac);background:var(--acl);color:var(--acd)}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1.3fr);border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card)}
+.col-head{padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);background:#f9fafb}
+.col1,.col2{border-right:1px solid var(--border)}
+.subj-head{display:flex;align-items:center;gap:10px;padding:15px 16px;border-bottom:1px solid var(--border);background:var(--ac)}
+.subj-head .ico{font-size:22px}
+.subj-head .sname{font-size:16px;font-weight:700;color:#fff}
+.col-body{padding:16px}
+.exam-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:6px}
+.exam-date{font-size:22px;font-weight:700;color:var(--ac);margin-bottom:4px}
+.exam-day{font-size:12px;color:var(--muted);margin-bottom:16px}
+.info-box{background:var(--acl);border-radius:10px;padding:12px 14px}
+.info-box .dl{font-size:10px;color:var(--acd);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.info-box .dv{font-size:13px;font-weight:600;color:var(--acd);margin-bottom:10px}
+.info-box .dv:last-child{margin-bottom:0}
+.unit-item{padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:9px}
+.unit-item:last-child{border-bottom:none}
+.unit-num{font-size:11px;font-weight:700;color:var(--acd);background:var(--acl);padding:2px 8px;border-radius:20px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.unit-name{font-size:13px;font-weight:600;color:var(--text)}
+.unit-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.45}
+.res-item{display:flex;align-items:center;gap:10px;padding:10px 8px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s;border-radius:8px}
+.res-item:last-child{border-bottom:none}
+.res-item:hover{background:var(--acl)}
+.res-ico{font-size:20px;width:30px;text-align:center;flex-shrink:0}
+.res-info .rt{font-size:13px;font-weight:600;color:var(--text)}
+.res-info .rd{font-size:11px;color:var(--muted);margin-top:2px}
+.res-btn{margin-left:auto;font-size:11px;padding:5px 11px;border-radius:7px;border:1.5px solid var(--ac);color:var(--acd);background:transparent;cursor:pointer;font-weight:700;font-family:inherit;white-space:nowrap;transition:all .13s;flex-shrink:0}
+.res-btn:hover{background:var(--ac);color:#fff}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.col1,.col2{border-right:none;border-bottom:1px solid var(--border)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">IMAS — Exam Topics &amp; Resources</div>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+const data=[
+  {id:'eng',label:'English',icon:'📖',ac:'#7c3aed',acl:'#f5f3ff',acd:'#5b21b6',
+   examDate:'12 June 2025',examDay:'Thursday',duration:'1 hour 30 min',paper:'Paper 1 & 2',
+   units:[
+     {num:'Unit 1',name:'Reading Comprehension',sub:'Fiction & non-fiction texts'},
+     {num:'Unit 2',name:'Writing Skills',sub:'Descriptive & narrative writing'},
+     {num:'Unit 3',name:'Grammar & Punctuation',sub:'Parts of speech, punctuation rules'},
+     {num:'Unit 4',name:'Vocabulary',sub:'Word families, synonyms & antonyms'},
+     {num:'Unit 5',name:'Speaking & Listening',sub:'Oral presentation skills'},
+   ],
+   resources:[
+     {ico:'📘',title:'English E-book',desc:'Full chapter explanations'},
+     {ico:'📝',title:'Workbook',desc:'Grammar & writing practice'},
+     {ico:'📒',title:'Vocabulary Notebook',desc:'Word lists & definitions'},
+     {ico:'📄',title:'Revision Paper',desc:'Past year exam questions'},
+   ]},
+  {id:'math',label:'Math',icon:'📐',ac:'#0f766e',acl:'#f0fdfa',acd:'#0d5f58',
+   examDate:'14 June 2025',examDay:'Saturday',duration:'1 hour 30 min',paper:'Paper 1 & 2',
+   units:[
+     {num:'Unit 1',name:'Numbers & Place Value',sub:'Reading, writing & comparing numbers'},
+     {num:'Unit 2',name:'Addition & Subtraction',sub:'4-digit column operations'},
+     {num:'Unit 3',name:'Multiplication & Division',sub:'Times tables 1–12, remainders'},
+     {num:'Unit 4',name:'Fractions',sub:'Equivalent fractions & comparison'},
+     {num:'Unit 5',name:'Measurement',sub:'Length, mass, capacity & time'},
+     {num:'Unit 6',name:'Geometry',sub:'2D & 3D shapes'},
+   ],
+   resources:[
+     {ico:'📘',title:'Maths E-book',desc:'Full chapter explanations'},
+     {ico:'📝',title:'Workbook',desc:'Practice exercises & drills'},
+     {ico:'📒',title:'Formula Notebook',desc:'Key formulas & worked examples'},
+     {ico:'📄',title:'Revision Paper',desc:'Past year exam questions'},
+   ]},
+  {id:'sci',label:'Science',icon:'🔬',ac:'#1d4ed8',acl:'#eff6ff',acd:'#1e40af',
+   examDate:'16 June 2025',examDay:'Monday',duration:'1 hour',paper:'Paper 1',
+   units:[
+     {num:'Unit 1',name:'Living Things',sub:'Animals, plants & their needs'},
+     {num:'Unit 2',name:'Sound',sub:'Vibrations, pitch & volume'},
+     {num:'Unit 3',name:'Materials in My World',sub:'Types & properties of materials'},
+     {num:'Unit 4',name:'Energy and Forces',sub:'Types of energy, pushes & pulls'},
+     {num:'Unit 5',name:'Earth and Space',sub:'Solar system & day/night cycle'},
+     {num:'Unit 6',name:'Our Environment',sub:'Caring for & recycling in nature'},
+   ],
+   resources:[
+     {ico:'📘',title:'Science E-book',desc:'Complete chapter explanations'},
+     {ico:'📝',title:'Science Workbook',desc:'Practice questions & activities'},
+     {ico:'📒',title:'Science Notebook',desc:'Class notes & key points'},
+     {ico:'📄',title:'Revision Paper',desc:'Past year questions for revision'},
+   ]},
+  {id:'arabic',label:'Arabic',icon:'🌙',ac:'#b91c1c',acl:'#fef2f2',acd:'#991b1b',
+   examDate:'18 June 2025',examDay:'Wednesday',duration:'1 hour',paper:'Paper 1 & 2',
+   units:[
+     {num:'Unit 1',name:'Reading & Phonics',sub:'Arabic letters & harakaat'},
+     {num:'Unit 2',name:'Vocabulary',sub:'Classroom objects & family'},
+     {num:'Unit 3',name:'Grammar',sub:'Nouns, gender & simple sentences'},
+     {num:'Unit 4',name:'Writing',sub:'Joining letters & dictation'},
+   ],
+   resources:[
+     {ico:'📘',title:'Arabic E-book',desc:'Full lesson content'},
+     {ico:'📝',title:'Arabic Workbook',desc:'Writing & reading drills'},
+     {ico:'📒',title:'Arabic Notebook',desc:'Vocabulary lists & grammar'},
+     {ico:'📄',title:'Revision Paper',desc:'Practice exam papers'},
+   ]},
+  {id:'isl',label:'Islamiyat',icon:'🕌',ac:'#15803d',acl:'#f0fdf4',acd:'#14532d',
+   examDate:'19 June 2025',examDay:'Thursday',duration:'45 min',paper:'Paper 1',
+   units:[
+     {num:'Unit 1',name:'Aqeedah (Beliefs)',sub:'Pillars of Iman & Tawheed'},
+     {num:'Unit 2',name:'Ibadah (Worship)',sub:'Pillars of Islam & Salah'},
+     {num:'Unit 3',name:'Seerah',sub:"Prophet's life ﷺ & Hijrah"},
+     {num:'Unit 4',name:'Akhlaq (Character)',sub:'Honesty, respect & kindness'},
+   ],
+   resources:[
+     {ico:'📘',title:'Islamiyat E-book',desc:'Detailed topic notes'},
+     {ico:'📝',title:'Islamiyat Workbook',desc:'Practice activities'},
+     {ico:'📒',title:'Islamiyat Notebook',desc:"Key points & du'as"},
+     {ico:'📄',title:'Revision Paper',desc:'Exam practice questions'},
+   ]},
+  {id:'quran',label:'Quran',icon:'📗',ac:'#0369a1',acl:'#f0f9ff',acd:'#075985',
+   examDate:'20 June 2025',examDay:'Friday',duration:'30 min',paper:'Oral Assessment',
+   units:[
+     {num:'Unit 1',name:'Recitation (Tilawah)',sub:'Makharij & fluent reading'},
+     {num:'Unit 2',name:'Tajweed Rules',sub:'Noon Sakinah & Madd types'},
+     {num:'Unit 3',name:'Memorisation (Hifz)',sub:'Juz Amma surahs & revision'},
+     {num:'Unit 4',name:'Tafseer (Meaning)',sub:'Surah meanings & Quranic lessons'},
+   ],
+   resources:[
+     {ico:'📗',title:'Recitation Guide',desc:'Tajweed rules & examples'},
+     {ico:'📝',title:'Quran Workbook',desc:'Hifz tracking sheets'},
+     {ico:'📒',title:'Tafseer Notes',desc:'Surah meanings & lessons'},
+     {ico:'📄',title:'Assessment Sheet',desc:'Recitation evaluation criteria'},
+   ]},
+];
+
+let cur=data[0];
+function css(s){['ac','acl','acd'].forEach(k=>document.documentElement.style.setProperty('--'+k,s[k]));}
+function render(){
+  css(cur);
+  document.getElementById('tabs').innerHTML=data.map(s=>
+    `<button class="tab${s.id===cur.id?' on':''}" data-id="${s.id}">${s.icon} ${s.label}</button>`
+  ).join('');
+  document.querySelectorAll('.tab').forEach(b=>{
+    b.addEventListener('mouseenter',()=>{cur=data.find(x=>x.id===b.dataset.id);render();});
+    b.addEventListener('click',()=>{cur=data.find(x=>x.id===b.dataset.id);render();});
+  });
+  document.getElementById('grid').innerHTML=`
+    <div class="col1">
+      <div class="col-head">Subject &amp; Exam Date</div>
+      <div class="subj-head"><span class="ico">${cur.icon}</span><span class="sname">${cur.label}</span></div>
+      <div class="col-body">
+        <div class="exam-label">Exam Date</div>
+        <div class="exam-date">${cur.examDate}</div>
+        <div class="exam-day">${cur.examDay}</div>
+        <div class="info-box">
+          <div class="dl">Duration</div><div class="dv">${cur.duration}</div>
+          <div class="dl">Format</div><div class="dv">${cur.paper}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col2">
+      <div class="col-head">Topics Included</div>
+      <div class="col-body">
+        ${cur.units.map(u=>`
+          <div class="unit-item">
+            <div class="unit-num">${u.num}</div>
+            <div><div class="unit-name">${u.name}</div><div class="unit-sub">${u.sub}</div></div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="col3">
+      <div class="col-head">Study Resources</div>
+      <div class="col-body">
+        ${cur.resources.map(r=>`
+          <div class="res-item">
+            <div class="res-ico">${r.ico}</div>
+            <div class="res-info"><div class="rt">${r.title}</div><div class="rd">${r.desc}</div></div>
+            <button class="res-btn">View</button>
+          </div>`).join('')}
+      </div>
+    </div>`;
+}
+render();
+</script>
+</body>
+</html>
