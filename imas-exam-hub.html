@@ -134,6 +134,68 @@
     .grades{padding:22px 18px}
   }
   @media (min-width:761px){.card .txt{display:contents}}
+  /* ---------- Schedule tab ---------- */
+  .page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:40px 0 70px;position:relative;overflow:hidden}
+  .page-hero::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--orange);opacity:.18;right:-90px;top:-120px}
+  .page-hero .wrap{position:relative}
+  .page-hero h1{font-size:2rem;font-weight:800;line-height:1.2}
+  .page-hero p{color:#D6F3FC;font-size:.95rem;margin-top:6px;max-width:620px}
+  .picker{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-top:-44px;position:relative;z-index:2}
+  .picker label{display:block;font-size:.75rem;font-weight:700;color:var(--orange);letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px 4px}
+  .seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .seg button{border:2px solid #D3E9F2;background:#F4FBFE;color:var(--navy);font-weight:700;font-size:.92rem;padding:12px 8px;border-radius:14px;transition:all .15s}
+  .seg button:hover{border-color:var(--blue)}
+  .seg button.on{background:var(--navy);border-color:var(--navy);color:var(--sun);box-shadow:0 6px 16px rgba(1,60,88,.25)}
+  .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 8px}
+  .sum{background:#fff;border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);border-left:5px solid var(--c)}
+  .sum small{display:block;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .sum b{color:var(--navy);font-size:1.05rem;font-weight:700}
+  .pre{background:#E9F8FD;border:1px dashed var(--blue);border-radius:16px;padding:16px 18px;margin:18px 0 6px;display:flex;gap:14px;align-items:flex-start}
+  .pre .pi{flex:none;width:40px;height:40px;border-radius:12px;background:var(--blue);display:grid;place-items:center}
+  .pre .pi svg{width:22px;height:22px;stroke:#fff}
+  .pre h4{color:var(--navy);font-size:.95rem;font-weight:700}
+  .pre ul{list-style:none;font-size:.86rem;color:var(--ink)}
+  .pre li b{color:var(--blue)}
+  .week{margin-top:28px}
+  .week h3{display:flex;align-items:center;gap:10px;color:var(--navy);font-size:1.05rem;font-weight:700;margin-bottom:12px}
+  .week h3 span{font-size:.75rem;font-weight:600;color:var(--blue);background:#E2F7FD;padding:3px 10px;border-radius:999px}
+  .day{display:flex;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(1,60,88,.07);margin-bottom:12px;overflow:hidden;border:2px solid transparent}
+  .day.next{border-color:var(--orange)}
+  .day.today{border-color:var(--blue)}
+  .day.past{opacity:.55}
+  .dt{flex:none;width:96px;background:var(--navy);color:#fff;text-align:center;padding:14px 6px;display:flex;flex-direction:column;justify-content:center}
+  .dt small{font-size:.7rem;font-weight:600;color:var(--sky);text-transform:uppercase;letter-spacing:.08em}
+  .dt b{font-size:1.9rem;font-weight:800;line-height:1.05;color:var(--sun)}
+  .dt span{font-size:.72rem;font-weight:600}
+  .day.brk .dt{background:var(--amber);color:var(--navy)}
+  .day.brk .dt b,.day.brk .dt small{color:var(--navy)}
+  .day.rev .dt,.day.none .dt{background:var(--blue)}
+  .slots{flex:1;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;gap:8px;min-width:0}
+  .slot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .slot + .slot{border-top:1px dashed #D3E9F2;padding-top:8px}
+  .time{flex:none;min-width:104px;text-align:center;font-size:.82rem;font-weight:700;color:var(--blue);background:#E9F8FD;padding:5px 10px;border-radius:8px;white-space:nowrap}
+  .subj{font-weight:700;color:var(--navy);font-size:1rem;flex:1;min-width:140px}
+  .subj small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+  .badge{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:999px;background:var(--orange);color:var(--navy)}
+  .badge.t{background:var(--blue);color:#fff}
+  .muted{color:var(--muted);font-weight:500;font-style:italic}
+  .sched-foot{margin:26px 0 50px;font-size:.82rem;color:var(--muted);text-align:center}
+  @media (max-width:760px){
+    .page-hero{padding:30px 0 64px}
+    .page-hero h1{font-size:1.55rem}
+    .seg{grid-template-columns:repeat(2,1fr)}
+    .seg button{font-size:.85rem;padding:11px 6px}
+    .summary{grid-template-columns:repeat(3,1fr);gap:8px}
+    .sum{padding:10px 10px;border-left-width:4px}
+    .sum small{font-size:.6rem}
+    .sum b{font-size:.85rem}
+    .time{min-width:0}
+    .dt{width:74px;padding:12px 4px}
+    .dt b{font-size:1.55rem}
+    .slots{padding:12px}
+    .slot{gap:6px 10px}
+    .subj{min-width:0;flex-basis:100%;font-size:.95rem}
+  }
 </style>
 </head>
 <body>
@@ -276,7 +338,26 @@
 </div>
 
 <!-- ================= PLACEHOLDER TABS (content to follow) ================= -->
-<div class="panel" id="schedule"><div class="wrap"><div class="soon"><h2>Final Exam Schedule</h2><p>Content for this section is being prepared.</p><button class="btn btn-primary" data-tab="home">← Back to Home</button></div></div></div>
+<div class="panel" id="schedule">
+  <div class="page-hero"><div class="wrap">
+    <span class="tag">Section 01</span>
+    <h1>Final Exam Schedule</h1>
+    <p>Select your child's grade to see the dates, times and subjects for each paper.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="picker">
+      <label>Choose a grade</label>
+      <div class="seg" id="gradeSeg">
+        <button data-g="g12">Grades 1 &amp; 2</button>
+        <button data-g="g3">Grade 3</button>
+        <button data-g="g45">Grades 4 &amp; 5</button>
+        <button data-g="g6">Grade 6</button>
+      </div>
+    </div>
+    <div id="schedOut"></div>
+    <p class="sched-foot">All times are Malaysia time. Please arrive early so your child is settled before each paper begins.</p>
+  </div>
+</div>
 <div class="panel" id="topics"><div class="wrap"><div class="soon"><h2>Study Topics &amp; Resources</h2><p>Content for this section is being prepared.</p><button class="btn btn-primary" data-tab="home">← Back to Home</button></div></div></div>
 <div class="panel" id="rules"><div class="wrap"><div class="soon"><h2>Exam Rules &amp; Regulations</h2><p>Content for this section is being prepared.</p><button class="btn btn-primary" data-tab="home">← Back to Home</button></div></div></div>
 <div class="panel" id="attendance"><div class="wrap"><div class="soon"><h2>Exam Attendance Policy</h2><p>Content for this section is being prepared.</p><button class="btn btn-primary" data-tab="home">← Back to Home</button></div></div></div>
@@ -305,7 +386,7 @@
     var t = e.target.closest('[data-tab]');
     if (!t) return;
     show(t.dataset.tab);
-    if (t.dataset.grade) window.selectedGrade = t.dataset.grade; // used by the schedule tab later
+    if (t.dataset.grade) renderSchedule(t.dataset.grade);
   });
 
   // ---- Countdown (Malaysia time, UTC+8) ----
@@ -333,6 +414,109 @@
     document.getElementById('cd-s').textContent = pad(Math.floor(diff / 1e3) % 60);
   }
   tick(); setInterval(tick, 1000);
+  // ---- Exam schedule data (from FE Schedule CSV) ----
+  // type: exam | rev (revision / class) | none (no paper) | brk (study break)
+  var BRK = [['2026-12-07','brk'],['2026-12-08','brk']];
+  var SCHED = {
+    g12:{name:'Grades 1 & 2', days:BRK.concat([
+      ['2026-12-09','none','8:20 - 11:00'],
+      ['2026-12-10','exam','8:20 - 9:50','Arabic','Paper 1'],
+      ['2026-12-11','none','8:20 - 11:00'],
+      ['2026-12-14','exam','8:20 - 9:50','Science'],
+      ['2026-12-15','exam','8:20 - 9:50','Arabic','Paper 2'],
+      ['2026-12-16','exam','8:20 - 9:50','Mathematics'],
+      ['2026-12-17','exam','8:20 - 9:50','Islamiyat'],
+      ['2026-12-18','exam','8:20 - 9:50','English']])},
+    g3:{name:'Grade 3', days:BRK.concat([
+      ['2026-12-09','exam','8:40 - 11:00','English','Paper 1'],
+      ['2026-12-10','exam','8:40 - 9:50','Arabic AS','Paper 1 + Revision'],
+      ['2026-12-11','exam','8:40 - 9:50','Mathematics'],
+      ['2026-12-14','exam','8:40 - 11:00','Arabic'],
+      ['2026-12-15','exam','8:40 - 11:00','Science'],
+      ['2026-12-16','exam','8:40 - 11:00','Bahasa Melayu (BM)'],
+      ['2026-12-17','exam','8:40 - 11:00','English','Paper 2'],
+      ['2026-12-18','exam','8:40 - 11:00','Islamiyat']])},
+    g45:{name:'Grades 4 & 5', days:BRK.concat([
+      ['2026-12-09','exam','8:40 - 11:00','English','Paper 1'],
+      ['2026-12-10','exam','8:40 - 9:50','Arabic AS','Paper 1 + Revision'],
+      ['2026-12-11','exam','8:40 - 9:50','Science'],
+      ['2026-12-14','exam','8:40 - 11:00','Arabic'],
+      ['2026-12-15','exam','8:40 - 11:00','Mathematics'],
+      ['2026-12-16','exam','8:40 - 11:00','Bahasa Melayu (BM)'],
+      ['2026-12-17','exam','8:40 - 11:00','English','Paper 2'],
+      ['2026-12-18','exam','8:40 - 11:00','Islamiyat']])},
+    g6:{name:'Grade 6', days:BRK.concat([
+      ['2026-12-09','rev','8:20 - 9:50','Revision Classes'],
+      ['2026-12-10','exam','8:20 - 9:50','Arabic AS','Paper 1 + Revision'],
+      ['2026-12-11','rev','8:20 - 9:50','Revision Classes'],
+      ['2026-12-14','exam','8:20 - 9:10','Mathematics','Paper 1','9:50 - 10:50','Mathematics','Paper 2'],
+      ['2026-12-15','exam','8:20 - 9:30','English','Paper 1','9:50 - 11:00','English','Paper 2'],
+      ['2026-12-16','exam','8:20 - 9:10','Science','Paper 1','9:50 - 10:50','Science','Paper 2'],
+      ['2026-12-17','exam','8:40 - 11:00','Bahasa Melayu (BM)'],
+      ['2026-12-18','exam','8:40 - 11:00','Islamiyat'],
+      ['2026-12-21','exam','8:40 - 11:00','Arabic']])}
+  };
+  var DN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var WEEKS = [['Week 1','7 – 11 December','2026-12-07','2026-12-11'],
+               ['Week 2','14 – 18 December','2026-12-14','2026-12-18'],
+               ['Week 3','21 December','2026-12-21','2026-12-21']];
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function parts(iso){ var d = new Date(iso + 'T12:00:00+08:00'); return {dow:DN[d.getUTCDay()], d:+iso.slice(8)}; }
+  function todayMY(){ return new Date(Date.now() + 8*36e5).toISOString().slice(0,10); }
+  function fmt(iso){ var p = parts(iso); return p.dow.slice(0,3) + ', ' + p.d + ' Dec'; }
+
+  function slotHTML(time, subj, sub){
+    return '<div class="slot"><span class="time">' + esc(time) + '</span><div class="subj">' + esc(subj) +
+           (sub ? '<small>' + esc(sub) + '</small>' : '') + '</div></div>';
+  }
+  function renderSchedule(g){
+    var S = SCHED[g]; if (!S) return;
+    document.querySelectorAll('#gradeSeg button').forEach(function(b){ b.classList.toggle('on', b.dataset.g === g); });
+    try { localStorage.setItem('imasGrade', g); } catch(e){}
+    var today = todayMY();
+    var exams = S.days.filter(function(d){ return d[1] === 'exam'; });
+    var papers = exams.reduce(function(n,d){ return n + (d[5] ? 2 : 1); }, 0);
+    var nextDay = (exams.filter(function(d){ return d[0] >= today; })[0] || [])[0];
+
+    var h = '<div class="summary">' +
+      '<div class="sum" style="--c:var(--orange)"><small>Written papers</small><b>' + papers + ' papers</b></div>' +
+      '<div class="sum" style="--c:var(--sky)"><small>First paper</small><b>' + fmt(exams[0][0]) + '</b></div>' +
+      '<div class="sum" style="--c:var(--blue)"><small>Last paper</small><b>' + fmt(exams[exams.length-1][0]) + '</b></div></div>';
+
+    h += '<div class="pre"><div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"/></svg></div>' +
+         '<div><h4>Before the written exams: Quran assessments</h4><ul>' +
+         '<li><b>Quran Oral</b> · Wednesday 2 – Friday 4 December 2026</li>' +
+         '<li><b>Quran AS (Paper)</b> · Friday 4 December 2026</li></ul></div></div>';
+
+    WEEKS.forEach(function(w){
+      var days = S.days.filter(function(d){ return d[0] >= w[2] && d[0] <= w[3]; });
+      if (!days.length) return;
+      h += '<div class="week"><h3>' + w[0] + ' <span>' + w[1] + '</span></h3>';
+      days.forEach(function(d){
+        var p = parts(d[0]), cls = d[1];
+        if (d[0] < today) cls += ' past';
+        if (d[0] === today) cls += ' today';
+        else if (d[0] === nextDay) cls += ' next';
+        var body;
+        if (d[1] === 'brk') body = '<div class="slot"><div class="subj">Study Break<small>No papers scheduled</small></div></div>';
+        else if (d[1] === 'none') body = '<div class="slot"><span class="time">' + esc(d[2]) + '</span><div class="subj"><span class="muted">No paper scheduled</span></div></div>';
+        else {
+          body = slotHTML(d[2], d[3], d[4]);
+          if (d[5]) body += slotHTML(d[5], d[6], d[7]);
+        }
+        if (d[0] === today) body += '<div><span class="badge t">Today</span></div>';
+        else if (d[0] === nextDay) body += '<div><span class="badge">Next paper</span></div>';
+        h += '<div class="day ' + cls + '"><div class="dt"><small>' + p.dow.slice(0,3) + '</small><b>' + p.d + '</b><span>DEC</span></div><div class="slots">' + body + '</div></div>';
+      });
+      h += '</div>';
+    });
+    document.getElementById('schedOut').innerHTML = h;
+  }
+  document.getElementById('gradeSeg').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (b) renderSchedule(b.dataset.g);
+  });
+  var saved = 'g12'; try { saved = localStorage.getItem('imasGrade') || 'g12'; } catch(e){}
+  renderSchedule(SCHED[saved] ? saved : 'g12');
 })();
 </script>
 </body>
