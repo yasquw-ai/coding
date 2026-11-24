@@ -156,6 +156,7 @@
   .pre h4{color:var(--navy);font-size:.95rem;font-weight:700}
   .pre ul{list-style:none;font-size:.86rem;color:var(--ink)}
   .pre li b{color:var(--blue)}
+  .pre li{margin-top:3px}
   .week{margin-top:28px}
   .week h3{display:flex;align-items:center;gap:10px;color:var(--navy);font-size:1.05rem;font-weight:700;margin-bottom:12px}
   .week h3 span{font-size:.75rem;font-weight:600;color:var(--blue);background:#E2F7FD;padding:3px 10px;border-radius:999px}
@@ -351,7 +352,7 @@
       <div class="timeline">
         <div class="step" style="--c:var(--sky)">
           <div class="dot"><b>2–4<small>DEC</small></b></div>
-          <div><h4>Quran Oral</h4><p>Oral assessments · 2–4 Dec</p></div>
+          <div><h4>Oral &amp; Listening</h4><p>Quran oral, Arabic speaking &amp; listening · 2–4 Dec</p></div>
         </div>
         <div class="step" style="--c:var(--sky)">
           <div class="dot"><b>4<small>DEC</small></b></div>
@@ -395,7 +396,21 @@
     <div style="height:50px"></div>
   </div>
 </div>
-<div class="panel" id="topics"><div class="wrap"><div class="soon"><h2>Study Topics &amp; Resources</h2><p>Content for this section is being prepared.</p><button class="btn btn-primary" data-tab="home">← Back to Home</button></div></div></div>
+<div class="panel" id="topics">
+  <div class="page-hero"><div class="wrap">
+    <span class="tag">Section 02</span>
+    <h1>Study Topics &amp; Resources</h1>
+    <p>Revision topics and study materials for each grade and subject.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="soon" style="margin-top:-40px;position:relative;z-index:2">
+      <h2>Coming soon</h2>
+      <p>Study topics and resources for all grades will be shared here <b>before 30 November 2026</b>. Please check back soon.</p>
+      <button class="btn btn-primary" data-tab="schedule">View Exam Schedule</button>
+    </div>
+    <div style="height:30px"></div>
+  </div>
+</div>
 <div class="panel" id="rules">
   <div class="page-hero"><div class="wrap">
     <span class="tag">Section 03</span>
@@ -430,7 +445,7 @@
       <article class="rcard" id="r-before" style="--c:var(--orange);--cbg:#FFF1D2">
         <header><div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><small>Part 2</small><h2>Before the Exam</h2></div></header>
         <ol>
-          <li>All students must be present and seated at their designated desks before the starting time. <b>Once the exam starts, no latecomers will be allowed in.</b></li>
+          <li>All students must be present and seated at their designated desks before the starting time.</li>
           <li>Authorised examination tools and equipment (pens, pencils, erasers, etc.) are to be set out on the desks. It is recommended to have <b>extra pens and pencils</b>.</li>
           <li>All books, notebooks and scraps of paper should be removed from the desks and placed inside students’ bags. All bags are to be placed neatly in a row at the back of the classroom.</li>
           <li>Students are to check their pockets to ensure that there are no scraps of paper, notes or books in their possession.</li>
@@ -577,7 +592,7 @@
       ['2026-12-18','exam','English']])},
     g3:{name:'Grade 3', days:BRK.concat([
       ['2026-12-09','exam','English','Paper 1'],
-      ['2026-12-10','exam','Arabic (Arabic Speakers Only)','Paper 1'],
+      ['2026-12-10','exam','Arabic Paper 1','Arabic Speakers Only',1,'Revision Classes','Non-Arabic Speakers'],
       ['2026-12-11','exam','Mathematics'],
       ['2026-12-14','exam','Arabic'],
       ['2026-12-15','exam','Science'],
@@ -586,7 +601,7 @@
       ['2026-12-18','exam','Islamiyat']])},
     g45:{name:'Grades 4 & 5', days:BRK.concat([
       ['2026-12-09','exam','English','Paper 1'],
-      ['2026-12-10','exam','Arabic (Arabic Speakers Only)','Paper 1 + Revision'],
+      ['2026-12-10','exam','Arabic Paper 1','Arabic Speakers Only',1,'Revision Classes','Non-Arabic Speakers'],
       ['2026-12-11','exam','Science'],
       ['2026-12-14','exam','Arabic'],
       ['2026-12-15','exam','Mathematics'],
@@ -595,7 +610,7 @@
       ['2026-12-18','exam','Islamiyat']])},
     g6:{name:'Grade 6', days:BRK.concat([
       ['2026-12-09','rev','Revision Classes'],
-      ['2026-12-10','exam','Arabic (Arabic Speakers Only)','Paper 1 + Revision'],
+      ['2026-12-10','exam','Arabic Paper 1','Arabic Speakers Only',1,'Revision Classes','Non-Arabic Speakers'],
       ['2026-12-11','rev','Revision Classes'],
       ['2026-12-14','exam','Mathematics','Paper 1 & Paper 2',2],
       ['2026-12-15','exam','English','Paper 1 & Paper 2',2],
@@ -632,10 +647,16 @@
       '<div class="sum" style="--c:var(--sky)"><small>First paper</small><b>' + fmt(exams[0][0]) + '</b></div>' +
       '<div class="sum" style="--c:var(--blue)"><small>Last paper</small><b>' + fmt(exams[exams.length-1][0]) + '</b></div></div>';
 
+    var junior = (g === 'g12');
     h += '<div class="pre"><div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"/></svg></div>' +
-         '<div><h4>Before the written exams: Quran assessments</h4><ul>' +
+         '<div><h4>Before the written exams: Quran &amp; Arabic oral assessments</h4><ul>' +
          '<li><b>Quran Oral</b> · Wednesday 2 – Friday 4 December 2026</li>' +
-         '<li><b>Quran Paper (Arabic Speakers Only)</b> · Friday 4 December 2026</li></ul></div></div>';
+         '<li><b>Quran Paper (Arabic Speakers Only)</b> · Friday 4 December 2026</li>' +
+         (junior
+           ? '<li><b>Arabic Listening &amp; Speaking (all students)</b> · Wednesday 2 – Friday 4 December 2026</li>'
+           : '<li><b>Arabic Speaking (Non-Arabic Speakers)</b> · Wednesday 2 – Friday 4 December 2026</li>' +
+             '<li><b>Arabic Listening (Non-Arabic Speakers)</b> · Thursday 3 December 2026</li>') +
+         '</ul></div></div>';
 
     WEEKS.forEach(function(w){
       var days = S.days.filter(function(d){ return d[0] >= w[2] && d[0] <= w[3]; });
@@ -648,7 +669,10 @@
         var body;
         if (d[1] === 'brk') body = '<div class="slot"><div class="subj">Study Break<small>No papers scheduled</small></div></div>';
         else if (d[1] === 'rev') body = slotHTML(d[2], 'Revision in class · no paper');
-        else body = slotHTML(d[2], d[3]);
+        else {
+          body = slotHTML(d[2], d[3]);
+          if (d[5]) body += slotHTML(d[5], d[6]);
+        }
         if (d[0] === today) body += '<div><span class="badge t">Today</span></div>';
         h += '<div class="day ' + cls + '"><div class="dt"><small>' + p.dow.slice(0,3) + '</small><b>' + p.d + '</b><span>DEC</span></div><div class="slots">' + body + '</div></div>';
       });
