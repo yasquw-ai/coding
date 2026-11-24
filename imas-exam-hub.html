@@ -160,7 +160,6 @@
   .week h3{display:flex;align-items:center;gap:10px;color:var(--navy);font-size:1.05rem;font-weight:700;margin-bottom:12px}
   .week h3 span{font-size:.75rem;font-weight:600;color:var(--blue);background:#E2F7FD;padding:3px 10px;border-radius:999px}
   .day{display:flex;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(1,60,88,.07);margin-bottom:12px;overflow:hidden;border:2px solid transparent}
-  .day.next{border-color:var(--orange)}
   .day.today{border-color:var(--blue)}
   .day.past{opacity:.55}
   .dt{flex:none;width:96px;background:var(--navy);color:#fff;text-align:center;padding:14px 6px;display:flex;flex-direction:column;justify-content:center}
@@ -356,7 +355,7 @@
         </div>
         <div class="step" style="--c:var(--sky)">
           <div class="dot"><b>4<small>DEC</small></b></div>
-          <div><h4>Quran AS (Paper)</h4><p>Written Quran assessment · Fri 4 Dec</p></div>
+          <div><h4>Quran Paper (Arabic Speakers Only)</h4><p>Written Quran assessment · Fri 4 Dec</p></div>
         </div>
         <div class="step" style="--c:var(--amber)">
           <div class="dot"><b>7–8<small>DEC</small></b></div>
@@ -578,7 +577,7 @@
       ['2026-12-18','exam','English']])},
     g3:{name:'Grade 3', days:BRK.concat([
       ['2026-12-09','exam','English','Paper 1'],
-      ['2026-12-10','exam','Arabic AS','Paper 1'],
+      ['2026-12-10','exam','Arabic (Arabic Speakers Only)','Paper 1'],
       ['2026-12-11','exam','Mathematics'],
       ['2026-12-14','exam','Arabic'],
       ['2026-12-15','exam','Science'],
@@ -587,7 +586,7 @@
       ['2026-12-18','exam','Islamiyat']])},
     g45:{name:'Grades 4 & 5', days:BRK.concat([
       ['2026-12-09','exam','English','Paper 1'],
-      ['2026-12-10','exam','Arabic AS','Paper 1 + Revision'],
+      ['2026-12-10','exam','Arabic (Arabic Speakers Only)','Paper 1 + Revision'],
       ['2026-12-11','exam','Science'],
       ['2026-12-14','exam','Arabic'],
       ['2026-12-15','exam','Mathematics'],
@@ -596,7 +595,7 @@
       ['2026-12-18','exam','Islamiyat']])},
     g6:{name:'Grade 6', days:BRK.concat([
       ['2026-12-09','rev','Revision Classes'],
-      ['2026-12-10','exam','Arabic AS','Paper 1 + Revision'],
+      ['2026-12-10','exam','Arabic (Arabic Speakers Only)','Paper 1 + Revision'],
       ['2026-12-11','rev','Revision Classes'],
       ['2026-12-14','exam','Mathematics','Paper 1 & Paper 2',2],
       ['2026-12-15','exam','English','Paper 1 & Paper 2',2],
@@ -627,7 +626,6 @@
     var today = todayMY();
     var exams = S.days.filter(function(d){ return d[1] === 'exam'; });
     var papers = exams.reduce(function(n,d){ return n + (d[4] || 1); }, 0);
-    var nextDay = (exams.filter(function(d){ return d[0] >= today; })[0] || [])[0];
 
     var h = DISMISS + '<div class="summary">' +
       '<div class="sum" style="--c:var(--orange)"><small>Written papers</small><b>' + papers + ' papers</b></div>' +
@@ -637,7 +635,7 @@
     h += '<div class="pre"><div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"/></svg></div>' +
          '<div><h4>Before the written exams: Quran assessments</h4><ul>' +
          '<li><b>Quran Oral</b> · Wednesday 2 – Friday 4 December 2026</li>' +
-         '<li><b>Quran AS (Paper)</b> · Friday 4 December 2026</li></ul></div></div>';
+         '<li><b>Quran Paper (Arabic Speakers Only)</b> · Friday 4 December 2026</li></ul></div></div>';
 
     WEEKS.forEach(function(w){
       var days = S.days.filter(function(d){ return d[0] >= w[2] && d[0] <= w[3]; });
@@ -647,13 +645,11 @@
         var p = parts(d[0]), cls = d[1];
         if (d[0] < today) cls += ' past';
         if (d[0] === today) cls += ' today';
-        else if (d[0] === nextDay) cls += ' next';
         var body;
         if (d[1] === 'brk') body = '<div class="slot"><div class="subj">Study Break<small>No papers scheduled</small></div></div>';
         else if (d[1] === 'rev') body = slotHTML(d[2], 'Revision in class · no paper');
         else body = slotHTML(d[2], d[3]);
         if (d[0] === today) body += '<div><span class="badge t">Today</span></div>';
-        else if (d[0] === nextDay) body += '<div><span class="badge">Next paper</span></div>';
         h += '<div class="day ' + cls + '"><div class="dt"><small>' + p.dow.slice(0,3) + '</small><b>' + p.d + '</b><span>DEC</span></div><div class="slots">' + body + '</div></div>';
       });
       h += '</div>';
